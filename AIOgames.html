@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Haptik JS SDK Integration Demo</title>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width; initial-scale=1.0;" name="viewport" />
+</head>
+
+<body>
+    <script>
+        window.haptikInitSettings = {
+            "business-id": "6166",
+            "client-id": "06d4018bbfe0c3a28e78124253033149d55ac4f7",
+            "base-url": "https://staging.hellohaptik.com/",
+            // "signup-type": "third_party",
+            "ignore-storage": true,
+
+        };
+
+        document.addEventListener('haptik_sdk', function () {
+            HaptikSDK.signup({
+                username:"Yogesh",
+                auth_id:"515e6fa8-ce66-4ecc-8ae6-d73cf6e73dc4",
+                auth_code:"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkIjo0NjMsInVzZXJuYW1lIjoiVGVzdDMiLCJzaXRlLWlkIjoxLCJ1dWlkIjoiM2JkZmQ4YTMtMzYxOC00M2Y3LTljYzAtYWMzNWQyOGE0NzZjIn0sImV4cCI6MTY2MTMxNzAwOX0.Oft4z13wmCuvdlNSQkXnnPjYEgJI-z_d-8CCs9xHHEg",
+                mobile_no: '8983810097',
+                email: 'demo@gmail.com',
+                custom_data: { "source": 7 },
+            }, function (success, error, data) {
+            if (success) {
+                HaptikSDK.show()
+            console.log('SIGNUP REQUEST SUCCEEDED!', data);
+            } else {
+            console.log('ERROR:', error);
+            }
+            });
+
+            
+            
+
+
+
+            });
+        
+    </script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://toolassets.haptikapi.com/platform/javascript-xdk/production/loader.js"></script>
+</body>
+
+</html>
